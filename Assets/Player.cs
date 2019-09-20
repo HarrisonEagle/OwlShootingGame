@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
         while (true)
         {
             GameObject obj = Instantiate(bullet);
+            Vector2 vec = bullet.transform.position;
+            obj.GetComponent<Bullet>().initXY(vec.x,vec.y,0.0f,0.2f);
             yield return new WaitForSeconds(0.1f);
         }
         // 何か処理
